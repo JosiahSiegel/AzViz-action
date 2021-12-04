@@ -1,0 +1,22 @@
+name: Windows runner
+on:
+  push:
+
+jobs:
+  generate-viz:
+      runs-on: windows-latest
+      steps:
+        - name: Login to Azure
+          uses: azure/login@v1
+          with:
+            creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }} 
+            enable-AzPSSession: true
+        - uses: JosiahSiegel/AzViz-action@v1.0.1
+          with:
+            resource-group: ${{ secrets.TEST_RG }}
+            out-file: output/viz.png
+            sub-name: Pay-As-You-Go
+        - uses: actions/upload-artifact@v2
+          with:
+            name: viz
+            path: output/viz.png

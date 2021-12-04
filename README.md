@@ -1,15 +1,16 @@
 # AzViz (Azure Visualizer) action
 
 ![](https://badgen.net/badge/icon/gitguardian/green?icon=gitguardian&label)
-[![Manually triggered full workflow](https://github.com/JosiahSiegel/AzViz-action/actions/workflows/sample_full_workflow.yml/badge.svg)](https://github.com/JosiahSiegel/AzViz-action/actions/workflows/sample_full_workflow.yml)
+[![Linux runner](https://github.com/JosiahSiegel/AzViz-action/actions/workflows/test_linux_runner.yml/badge.svg)](https://github.com/JosiahSiegel/AzViz-action/actions/workflows/test_linux_runner.yml)
+[![Windows runner](https://github.com/JosiahSiegel/AzViz-action/actions/workflows/test_windows_runner.yml/badge.svg)](https://github.com/JosiahSiegel/AzViz-action/actions/workflows/test_windows_runner.yml)
 
-## ☕ Donate to [AzViz Developer](https://github.com/PrateekKumarSingh/AzViz#readme)
+## ☕ Please donate to [AzViz Developer](https://github.com/PrateekKumarSingh/AzViz#readme)
 
 ![](https://github.com/PrateekKumarSingh/AzViz/blob/master/img/themeneon.jpg)
 
 ## Synopsis
 
-[GitHub action](https://github.com/marketplace?type=actions) ready [AzViz](https://github.com/PrateekKumarSingh/AzViz)!
+[AzViz](https://github.com/PrateekKumarSingh/AzViz) for [GitHub actions](https://github.com/marketplace?type=actions)!
 
 ## Inputs
 
@@ -68,15 +69,15 @@ inputs:
 `sample_min_workflow.yml`
 ```yml
 jobs:
-  Windows-latest:
-      runs-on: windows-latest
+  generate-viz:
+      runs-on: ubuntu-latest
       steps:
         - name: Login to Azure
           uses: azure/login@v1
           with:
             creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }} 
             enable-AzPSSession: true
-        - uses: JosiahSiegel/AzViz-action@v1
+        - uses: JosiahSiegel/AzViz-action@v1.0.1
           with:
             resource-group: ${{ github.event.inputs.resource-group }}
             out-file: ${{ github.event.inputs.out-file }}
@@ -89,4 +90,4 @@ jobs:
 
 ## Dependencies
 
- * [azure/login](https://github.com/marketplace/actions/azure-login)
+ * [azure/login](https://github.com/marketplace/actions/azure-login) with `enable-AzPSSession: true`
