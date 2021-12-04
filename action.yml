@@ -1,6 +1,9 @@
 # action.yml
 name: 'Run AzViz'
 description: 'Run AzViz and export graph'
+branding:
+  icon: 'download-cloud'  
+  color: 'blue'
 inputs:
   resource-group:
     description: Comma-seperated resource group list
