@@ -1,6 +1,6 @@
 # action.yml
 name: 'Run AzViz'
-description: 'Run AzViz and export graph'
+description: 'Azure visualization generator'
 branding:
   icon: 'download-cloud'  
   color: 'blue'
@@ -49,9 +49,16 @@ runs:
   using: "composite"
   steps:
     - name: Choco install graphviz
+      if: runner.os == 'Windows'
       uses: crazy-max/ghaction-chocolatey@v1
       with:
         args: install graphviz
+    - name: Apt-get install graphviz
+      if: runner.os != 'Windows'
+      run: |
+        sudo apt-get update;
+        sudo apt-get install graphviz -y;
+      shell: bash
     - name: 'Install AzViz module'
       shell: pwsh
       run: |

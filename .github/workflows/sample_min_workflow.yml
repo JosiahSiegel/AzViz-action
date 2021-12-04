@@ -9,22 +9,22 @@ on:
       out-file:
         description: Graph export path
         required: true
-        default: output\viz.png
+        default: output/viz.png
       sub-name:
         description: Azure subscription name
         required: true
         default: Pay-As-You-Go
 
 jobs:
-  Windows-latest:
-      runs-on: windows-latest
+  generate-viz:
+      runs-on: ubuntu-latest
       steps:
         - name: Login to Azure
           uses: azure/login@v1
           with:
             creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }} 
             enable-AzPSSession: true
-        - uses: JosiahSiegel/AzViz-action@v1
+        - uses: JosiahSiegel/AzViz-action@v1.0.1
           with:
             resource-group: ${{ github.event.inputs.resource-group }}
             out-file: ${{ github.event.inputs.out-file }}
