@@ -3,7 +3,9 @@
 ![](https://badgen.net/badge/icon/gitguardian/green?icon=gitguardian&label)
 [![Manually triggered full workflow](https://github.com/JosiahSiegel/AzViz-action/actions/workflows/sample_full_workflow.yml/badge.svg)](https://github.com/JosiahSiegel/AzViz-action/actions/workflows/sample_full_workflow.yml)
 
-Donate to [AzViz Developer](https://github.com/PrateekKumarSingh/AzViz#readme)
+## ☕ Donate to [AzViz Developer](https://github.com/PrateekKumarSingh/AzViz#readme)
+
+![](https://github.com/PrateekKumarSingh/AzViz/blob/master/img/themeneon.jpg)
 
 ## Synopsis
 
@@ -87,5 +89,4 @@ jobs:
 
 ## Dependencies
 
- * [windows-latest](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources)
  * [azure/login](https://github.com/marketplace/actions/azure-login)

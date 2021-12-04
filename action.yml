@@ -1,6 +1,6 @@
 # action.yml
 name: 'Run AzViz'
-description: 'Run AzViz and export graph'
+description: 'Azure visualization generator'
 branding:
   icon: 'download-cloud'  
   color: 'blue'

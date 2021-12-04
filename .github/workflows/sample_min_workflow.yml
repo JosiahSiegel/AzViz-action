@@ -16,8 +16,8 @@ on:
         default: Pay-As-You-Go
 
 jobs:
-  Windows-latest:
-      runs-on: windows-latest
+  generate-viz:
+      runs-on: ubuntu-latest
       steps:
         - name: Login to Azure
           uses: azure/login@v1
