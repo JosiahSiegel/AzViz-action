@@ -1,6 +1,6 @@
 # action.yml
-name: 'Run AzViz'
-description: 'Azure visualization generator'
+name: 'Generate Azure resource topology diagrams with AzViz (Azure Visualizer)'
+description: 'Run AzViz against one or more Azure Resource Groups'
 branding:
   icon: 'download-cloud'  
   color: 'blue'
