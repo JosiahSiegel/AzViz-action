@@ -24,7 +24,7 @@ inputs:
   out-file:
     description: Graph export path
     required: true
-    default: viz.png
+    default: output/viz.svg
   sub-name:
     description: Azure subscription name
     required: true
@@ -49,7 +49,7 @@ inputs:
   format:
     description: Graph format (png or svg)
     required: false
-    default: png
+    default: svg
   direction:
     description: Direction in which resource groups are plotted on the visualization (left-to-right or top-to-bottom)
     required: false
@@ -77,7 +77,7 @@ jobs:
           with:
             creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }} 
             enable-AzPSSession: true
-        - uses: JosiahSiegel/AzViz-action@v1.0.1
+        - uses: JosiahSiegel/AzViz-action@v1.0.3
           with:
             resource-group: ${{ github.event.inputs.resource-group }}
             out-file: ${{ github.event.inputs.out-file }}
@@ -85,7 +85,7 @@ jobs:
         - uses: actions/upload-artifact@v2
           with:
             name: viz
-            path: ${{ github.event.inputs.out-file }}
+            path: output/*
 ```
 
 ## Dependencies
