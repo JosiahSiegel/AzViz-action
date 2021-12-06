@@ -1,11 +1,6 @@
 name: Windows runner
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   generate-viz:
