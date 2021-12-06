@@ -16,7 +16,7 @@ jobs:
         - name: Check out repository
           uses: actions/checkout@v2
         - name: Use local my-action
-          uses: ./.github/workflows/sample_min_workflow-test.yml
+          uses: ./
           with:
             resource-group: interview-admin-rg
             out-file: output/viz.svg
