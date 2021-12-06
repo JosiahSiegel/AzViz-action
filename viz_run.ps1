@@ -48,9 +48,9 @@ Export-AzViz `
 if (${FORMAT} -eq 'svg') {
 
     # Move svg embedded png to output directory
-    ((Get-Content -path ${OUT_FILE} -Raw) -replace '(?<=xlink:href\=").+?(?=icons)','') | Set-Content -Path ${OUT_FILE}
+    ((Get-Content -path ${OUT_FILE} -Raw) -replace '(\/home).+?(?=icons\/)','') | Set-Content -Path ${OUT_FILE}
     $ICON_PATH=$(Split-Path -Path ${OUT_FILE})+'/icons/'
     New-Item -ItemType Directory -Force -Path ${ICON_PATH}
-    Get-Childitem -Path '$HOME/*/AzViz/*' -recurse -include *.png | Move-Item -dest ${ICON_PATH}
+    Get-Childitem -Path '*/AzViz/*' -recurse -include *.png | Move-Item -dest ${ICON_PATH}
 
 };
