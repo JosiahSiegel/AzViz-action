@@ -52,6 +52,6 @@ if (${FORMAT} -eq 'svg') {
     $ICON_PATH=$(Split-Path -Path ${OUT_FILE})+'/icons/'
     Write-Host "Moving ${HOME}/*/AzViz/* icons to ${ICON_PATH}"
     New-Item -ItemType Directory -Force -Path ${ICON_PATH}
-    Get-Childitem -Path "${HOME}" -Filter "*AzViz*" -recurse -include *.png | Move-Item -dest ${ICON_PATH}
+    Get-Childitem -Path "${HOME}/*" -Filter "*AzViz*" -recurse -include *.png | Move-Item -dest ${ICON_PATH} -PassThru
 
 };
