@@ -49,7 +49,8 @@ if (${FORMAT} -eq 'svg') {
 
     # Move svg embedded png to output directory
     ((Get-Content -path ${OUT_FILE} -Raw) -replace '/home/runner/.local/share/powershell/Modules/AzViz/*/icons/','icons/') | Set-Content -Path ${OUT_FILE}
-    $ICON_PATH=$(Split-Path -Path ${OUT_FILE})
-    Get-Childitem '/home/runner/.local/share/powershell/Modules/AzViz/' -recurse -include *.png | Move-Item -dest "${ICON_PATH}/icons/"
+    $ICON_PATH=$(Split-Path -Path ${OUT_FILE})+'/icons/'
+    New-Item -ItemType Directory -Force -Path ${ICON_PATH}
+    Get-Childitem '/home/runner/.local/share/powershell/Modules/AzViz/' -recurse -include *.png | Move-Item -dest ${ICON_PATH}
 
 };
