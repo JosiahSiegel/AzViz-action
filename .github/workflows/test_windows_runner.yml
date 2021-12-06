@@ -1,6 +1,11 @@
 name: Windows runner
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   generate-viz:
@@ -11,12 +16,16 @@ jobs:
           with:
             creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }} 
             enable-AzPSSession: true
-        - uses: JosiahSiegel/AzViz-action@v1.0.1
+        - name: Check out repository
+          uses: actions/checkout@v2
+        - name: Use local my-action
+          uses: ./
           with:
             resource-group: ${{ secrets.TEST_RG }}
-            out-file: output/viz.png
+            out-file: output/viz.svg
             sub-name: Pay-As-You-Go
+            format: svg
         - uses: actions/upload-artifact@v2
           with:
             name: viz
-            path: output/viz.png
+            path: output/*
