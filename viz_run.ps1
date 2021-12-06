@@ -50,8 +50,8 @@ if (${FORMAT} -eq 'svg') {
     # Move svg embedded png to output directory
     ((Get-Content -path ${OUT_FILE} -Raw) -replace '(?<=xlink:href\=").+?(?=icons)','') | Set-Content -Path ${OUT_FILE}
     $ICON_PATH=$(Split-Path -Path ${OUT_FILE})+'/icons/'
-    Write-Host "Moving icons to ${ICON_PATH}"
+    Write-Host "Moving ${HOME}/*/AzViz/* icons to ${ICON_PATH}"
     New-Item -ItemType Directory -Force -Path ${ICON_PATH}
-    Get-Childitem -Path "${HOME}/*/AzViz/*" -recurse -include *.png | Move-Item -dest ${ICON_PATH} -PassThru
+    Get-Childitem -Path "${HOME}/*" -Filter "*AzViz*" -recurse -include *.png | Move-Item -dest ${ICON_PATH} -PassThru
 
 };
