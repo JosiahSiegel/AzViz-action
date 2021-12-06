@@ -1,6 +1,11 @@
 name: Linux runner
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   generate-viz:
@@ -11,7 +16,10 @@ jobs:
           with:
             creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }} 
             enable-AzPSSession: true
-        - uses: JosiahSiegel/AzViz-action@v1.0.1
+        - name: Check out repository
+          uses: actions/checkout@v2
+        - name: Use local my-action
+          uses: ./
           with:
             resource-group: ${{ secrets.TEST_RG }}
             out-file: output/viz.png
