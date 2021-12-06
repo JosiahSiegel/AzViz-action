@@ -51,6 +51,6 @@ if (${FORMAT} -eq 'svg') {
     ((Get-Content -path ${OUT_FILE} -Raw) -replace '(?<=xlink:href\=").+?(?=icons)','') | Set-Content -Path ${OUT_FILE}
     $ICON_PATH=$(Split-Path -Path ${OUT_FILE})+'/icons/'
     New-Item -ItemType Directory -Force -Path ${ICON_PATH}
-    Get-Childitem -Path '$HOME/*/AzViz/*' -recurse -include *.png | Move-Item -dest ${ICON_PATH}
+    Get-Childitem -Path "${HOME}/*/AzViz/*" -recurse -include *.png | Move-Item -dest ${ICON_PATH}
 
 };
