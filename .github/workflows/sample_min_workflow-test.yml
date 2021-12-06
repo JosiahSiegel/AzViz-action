@@ -13,7 +13,10 @@ jobs:
           with:
             creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }} 
             enable-AzPSSession: true
-        - uses: JosiahSiegel/AzViz-action@e9c988556d2f8a55484ea23a0cf0dfd3b95442f3
+        - name: Check out repository
+          uses: actions/checkout@v2
+        - name: Use local my-action
+          uses: ./.github/workflows/sample_min_workflow-test.yml
           with:
             resource-group: interview-admin-rg
             out-file: output/viz.svg
