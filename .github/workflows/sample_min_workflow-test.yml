@@ -13,7 +13,7 @@ jobs:
           with:
             creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }} 
             enable-AzPSSession: true
-        - uses: JosiahSiegel/AzViz-action@585620a0746a79b20bd00247304065757bea0eca
+        - uses: JosiahSiegel/AzViz-action@3d0dbc4d78bf9ad13807869a2375ba03287195ae
           with:
             resource-group: interview-admin-rg
             out-file: output/viz.svg
