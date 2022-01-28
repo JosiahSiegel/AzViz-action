@@ -9,7 +9,7 @@ on:
       out-file:
         description: Graph export path
         required: true
-        default: output/viz.png
+        default: output/viz.svg
       sub-name:
         description: Azure subscription name
         required: true

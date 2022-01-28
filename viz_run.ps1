@@ -2,7 +2,7 @@ Param(
     [Parameter(Mandatory)]
     [String]$RESOURCE_GROUP,
     [Parameter(Mandatory)]
-    [String]$OUT_FILE = 'viz.png',
+    [String]$OUT_FILE = 'viz.svg',
     [Parameter(Mandatory)]
     [String]$SUB_NAME = 'Pay-As-You-Go',
     [Parameter(Mandatory)]
@@ -12,7 +12,7 @@ Param(
     [Parameter(Mandatory)]
     [String]$VERBOSITY = '1',
     [Parameter(Mandatory)]
-    [String]$FORMAT = 'png',
+    [String]$FORMAT = 'svg',
     [Parameter(Mandatory)]
     [String]$DIRECTION = 'top-to-bottom',
     [String]$EXCLUDE_TYPES = '*excludethisthing1,excludethisthing2*',
