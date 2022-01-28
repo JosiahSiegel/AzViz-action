@@ -11,7 +11,7 @@ inputs:
   out-file:
     description: Graph export path
     required: true
-    default: viz.png
+    default: viz.svg
   sub-name:
     description: Azure subscription name
     required: true
@@ -30,8 +30,8 @@ inputs:
     default: '1'
   format:
     description: Graph format (png or svg)
-    required: false
-    default: png
+    required: true
+    default: svg
   direction:
     description: Direction in which resource groups are plotted on the visualization (left-to-right or top-to-bottom)
     required: false

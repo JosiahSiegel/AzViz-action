@@ -9,7 +9,7 @@ on:
       out-file:
         description: Graph export path
         required: true
-        default: output/viz.png
+        default: output/viz.svg
       sub-name:
         description: Azure subscription name
         required: true
@@ -32,4 +32,4 @@ jobs:
         - uses: actions/upload-artifact@v2
           with:
             name: viz
-            path: ${{ github.event.inputs.out-file }}
+            path: output/*

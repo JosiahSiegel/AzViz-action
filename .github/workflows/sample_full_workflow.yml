@@ -9,7 +9,7 @@ on:
       out-file:
         description: Graph export path
         required: true
-        default: output/viz.png
+        default: output/viz.svg
       sub-name:
         description: Azure subscription name
         required: true
@@ -29,7 +29,7 @@ on:
       format:
         description: Graph format (png or svg)
         required: true
-        default: png
+        default: svg
       direction:
         description: Direction in which resource groups are plotted on the visualization (left-to-right or top-to-bottom)
         required: true
@@ -67,4 +67,4 @@ jobs:
         - uses: actions/upload-artifact@v2
           with:
             name: viz
-            path: ${{ github.event.inputs.out-file }}
+            path: output/*

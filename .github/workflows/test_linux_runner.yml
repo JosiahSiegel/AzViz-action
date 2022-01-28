@@ -22,9 +22,10 @@ jobs:
           uses: ./
           with:
             resource-group: ${{ secrets.TEST_RG }}
-            out-file: output/viz.png
+            out-file: output/viz.svg
             sub-name: Pay-As-You-Go
+            format: svg
         - uses: actions/upload-artifact@v2
           with:
             name: viz
-            path: output/viz.png
+            path: output/*
